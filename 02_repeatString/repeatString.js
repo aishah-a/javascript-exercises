@@ -1,4 +1,4 @@
-const repeatString = function('hey', 3) {
+const repeatString = function(word, times) {
     for (let i = 0; i <= 3; i++) {
         return 'hey';
     }

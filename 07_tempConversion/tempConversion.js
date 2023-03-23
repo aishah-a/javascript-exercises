@@ -9,7 +9,11 @@ tempCelsius = parseFloat(tempCelsius);
 return tempCelsius;
 };
 
-const convertToFahrenheit = function() {
+const convertToFahrenheit = function(temp) {
+  let tempFahr = ((temp * (9/5)) + 32);
+  tempFahr = tempFahr.toFixed(1);
+  tempFahr = parseFloat(tempFahr);
+  return tempFahr;
 };
 
 // Do not edit below this line

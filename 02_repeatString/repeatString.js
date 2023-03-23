@@ -7,5 +7,8 @@ const repeatString = function(word, times) {
     return string;
 };
 
+let repeatedString = repeatString;
+
+
 // Do not edit below this line
 module.exports = repeatString;

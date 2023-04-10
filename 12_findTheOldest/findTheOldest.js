@@ -22,14 +22,14 @@ const people = [
 let date = new Date();
 let currentYear = date.getFullYear();
 
-
-for (let i = 0; i < people.length; i++) {
-  if (people.yearOfDeath in people) {
-      age = people[i].yearOfDeath - people[i].yearOfBirth;
-  } else {
-    age = currentYear - people[i].yearOfBirth;
+let i = 0;
+for (; i < people.length; i++) {
+  let personAge
+  personAge = people[i].yearOfDeath - people[i].yearOfBirth;
+  let age = personAge
+  for (let person of people) {
+    people[i].age = age
   }
-  console.log(age)
 }
 
 

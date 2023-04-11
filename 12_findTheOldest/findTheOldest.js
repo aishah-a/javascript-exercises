@@ -1,50 +1,39 @@
+const findTheOldest = function(array) {
+  return array.reduce((previous, current) => {
+    const oldestAge = getAge(previous.yearOfBirth, previous.yearOfDeath);
+    const currentAge = getAge(current.yearOfBirth, current.yearOfDeath);
+    
+    return oldestAge < currentAge ? current : previous
+  })
+};
 
-// Given an array of objects representing people with a birth and death year, return the oldest person.
+const getAge = function(birthYear, deathYear) {
+  if (!deathYear) {
+    deathYear = new Date().getFullYear();
+  }
+  return deathYear - birthYear;
+}
 
-const people = [
-  {
-    name: "Carly",
-    yearOfBirth: 1942,
-    yearOfDeath: 1970,
-  },
-  {
-    name: "Ray",
-    yearOfBirth: 1962,
-    yearOfDeath: 2011,
-  },
-  {
-    name: "Jane",
-    yearOfBirth: 1912,
-    yearOfDeath: 1941,
-  },
-]
+/*
 
-let date = new Date();
-let currentYear = date.getFullYear();
-
-let i = 0;
-for (; i < people.length; i++) {
-  let personAge
-  personAge = people[i].yearOfDeath - people[i].yearOfBirth;
-  let age = personAge
-  for (let person of people) {
-    people[i].age = age
+forEach (person in people) 
+  if (yearOfDeath) {
+    let i = 0;
+    for (; i < people.length; i++) {
+      let personAge
+      personAge = people[i].yearOfDeath - people[i].yearOfBirth;
+      let age = personAge
+      for (let person of people) {
+        people[i].age = age
+        }
+      }
+    const peopleSorted = []
+    peopleSorted.push(people.sort((a, b) => a.age < b.age ? 1 : -1));
+    return peopleSorted[0][0];
   }
 }
+*/
 
-
-// calculate ages
-// age = yearOfDeath people.yearOfBirth
-// IF !yearOfDeath IN people
-// still alive, calculate current age
-// const sorted = (people.sort(a, b) => a.age > b.age ? 1 : -1
-
-// sort by age
-// return oldest
-
-
-const findTheOldest = function(array) {
-}
 
 // Do not edit below this line
 module.exports = findTheOldest;
